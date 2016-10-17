@@ -1,0 +1,22 @@
+{
+  "name": "express_with_socketio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DDTChen/expressWithSocketIO.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DDTChen/expressWithSocketIO/issues"
+  },
+  "homepage": "https://github.com/DDTChen/expressWithSocketIO#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
