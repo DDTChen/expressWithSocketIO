@@ -5,14 +5,17 @@ var http = require('http').Server(app);
 //websocket
 var io = require('socket.io')(http);
 
-
+app.use(express.static('www'));
 app.get('/', function (req, res) {
-    res.sendFile(__dirname + '/index.html');
+    // res.sendFile(__dirname + '/index.html');
+    res.sendFile(__dirname + '/www/index.html');
 });
 
 //websocket
 io.on('connection', function(socket) {
-    console.log('a user connected');
+    console.log('a user connected and server say hi');
+    socket.broadcast.emit('hi');
+
     socket.on('disconnect', function(){
         console.log('user disconnected');
     });
@@ -35,6 +38,11 @@ io.on('connection', function(socket) {
     socket.on('answer complete', function(roomId){
         console.log('answer complete: ' + id);
         socket.broadcast.to(roomId).emit('answer complete', qid);
+    });
+
+    socket.on('chat message', function(message){
+        console.log('chat message: ' + message);
+        io.emit('chat message echo', message);
     });
 });
 
