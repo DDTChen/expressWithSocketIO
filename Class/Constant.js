@@ -1,18 +1,12 @@
-module.exports = function (io) {
+module.exports = function () {
     return {
-        create: 'ACTION_USER_CREATE_ROOM',
-        createFinished: 'ACTION_USER_CREATE_ROOM_COMPLETE',
-        join: 'ACTION_USER_JOIN_ROOM',
-        joinFinished: 'ACTION_USER_JOIN_ROOM_COMPLETE'
-
-// var ACTION_GET_OPENED_ROOM = 'ACTION_GET_OPENED_ROOM';
-
-// var ACTION_QUESTIONNAIRE_CREATE = 'ACTION_QUESTIONNAIRE_CREATE';
-
-// var ACTION_GET_CURRENT_QUESTIONNAIRE = 'ACTION_GET_CURRENT_QUESTIONNAIRE';
-
-// var ACTION_QUESTIONNAIRE_CLOSE = 'ACTION_QUESTIONNAIRE_CLOSE';
-
-// var ACTION_QUESTIONNAIRE_ANSWER = 'ACTION_QUESTIONNAIRE_ANSWER';
+        create: 'create-room',
+        createFinished: 'create-room-complete',
+        join: 'join-room',
+        leave: 'leave-room',
+        listStudent: 'list-user-in-room',
+        listRoom: 'list-rooms',
+        //
+        HONGU_LMS_HOST: 'http://211.20.224.7:8080'
     };
 };

@@ -8,6 +8,9 @@ var io = require('socket.io')(http);
 //classroom manager
 var classroom = require('./Class/Classroom.js')().listen(io);
 
+//enquete
+var enquete = require('./Enquete/enquete.js')().listen(io);
+
 app.use(express.static('www'));
 app.get('/', function (req, res) {
     res.sendFile(__dirname + '/www/index.html');
@@ -15,10 +18,9 @@ app.get('/', function (req, res) {
 
 //----------------
 //websocket
-io.on('connection', function(socket) {
-    console.log('a user connected and server say hi');
-    socket.broadcast.emit('hi');
-});
+// io.on('connection', function(socket) {
+//     socket.broadcast.emit('hi');
+// });
 
 //----------------
 
